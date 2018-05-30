@@ -22,7 +22,7 @@ To display files in our directory we should use command : \l
 ## Then,after we create user with some password by having command:
 create user username with password 'something'
 To see the roles command : \du
-# To make a database user with different roles:
+## To make a database user with different roles:
 alter user username with Superuser;
 alter user username with Createrole;
 alter user username with CreateDB;
@@ -38,13 +38,13 @@ In this news data base we have three tables named:
       articles,
       authors,
       log
- # The first query is most popular three articles of all time:
+ ## The first query is most popular three articles of all time:
  For this  I have created a view as  article_view
 create  view  article_view as select title,count(*) as likes from articles,log where  log.path like concat('%',articles.slug) group by articles.title,articles.author order by likes desc;
-# The second query is most popular article all the time:
+## The second query is most popular article all the time:
 For this I have created a views as authors_view
 create  view  authors_view as select name,count(*) as views from articles,authors,log where authors.id=articles.author and  log.path like concat('%',articles.slug) group by name order by views desc;
-# The third query is based on which day did more than 1% of requests lead to errors:
+## The third query is based on which day did more than 1% of requests lead to errors:
 For  this I have created three views:
 1.error_view : this view gives the number of errors that not found.
 create view error_view as select date(time),count(*) as errors  from log where log.status like concat('404 NOT FOUND') group by date(time) order by errors desc;
@@ -52,9 +52,9 @@ create view error_view as select date(time),count(*) as errors  from log where l
 create view total_view as select date(time),count(status) as total_errors from log group by date(time)  order by total_errors desc;
 3. log_view:this view gives the percentage of errors
 create view log_view as select total_view.date as date,((100.00*errors)/(total_errors)) as percentage_errors from error_view natural join total_viewwhere error_view.date=total_view.date group by total_view.date order by percentage_errors desc;
-# Queries:
+## Queries:
  open the file and write the queries based on given conditions and save that file in the vagrant directory with .py extension.
-# To run:
+## To run:
 In the vagrant folder directory run the file using python filename.py
 By this we can complete the loganalysis project.
  
