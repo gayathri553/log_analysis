@@ -8,11 +8,11 @@ To do this project we must install certain softwares as:
   -vagrant
   -postgres database
   -python
-#vagrant:
+# vagrant:
  This vagrant is used to run different operating system environment in on single OS.
 This project is completely based on Ubuntu operating system.
 After installing vagrant we should create a folder name vagrant in our directory.Later we open the command propmt or terminal in the vagrant folder path.
-Then,we should run some commands as:
+# Then,we should run some commands as:
   -vagrant -v
   -vagrant init ubuntu/trusty64( or some other vagrant environment for ubuntu)
   -Vagrant up
@@ -21,10 +21,10 @@ Then,we should run some commands as:
  To change to postgres folder we should run command : sudo -i -u postgres
  Then after we should connect to  postgres database by having command psql.
 To display files in our directory we should use command : \l
-Then,after we create user with some password by having command:
+# Then,after we create user with some password by having command:
 create user username with password 'something'
 To see the roles command : \du
-To make a database user with different roles:
+# To make a database user with different roles:
 alter user username with Superuser;
 alter user username with Createrole;
 alter user username with CreateDB;
@@ -37,9 +37,9 @@ Then we get message as that you are connected to news database from vagrant..
 To fetch the data for our project we use the command that already discuused in the udacity course tutorials : psql -d news -f filename.sql (This Zip file we get download from the udacity full stack course of log analysis project)
 Then after we use different queries to get data to certain neccessary question that aksed in the project.
 In this news data base we have three tables named:
-     articles
-     authors
-     log
+     # articles
+     # authors
+     # log
  The first query is most popular three articles of all time:
  For this  I have created a view as  article_view
 create  view  article_view as select title,count(*) as likes from articles,log where  log.path like concat('%',articles.slug) group by articles.title,articles.author order by likes desc;
