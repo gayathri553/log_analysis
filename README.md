@@ -1,9 +1,7 @@
 # log_analysis
 About Queries in postgres database
-# log_analysis
-About Queries in postgres database
 This Log analysis project is third project of Udacity Full Stack Nanodegree course:
-To do this project we must install certain softwares as:
+# To do this project we must install certain softwares as:
   -virtualBox
   -vagrant
   -postgres database
