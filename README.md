@@ -46,8 +46,8 @@ For this I have created a views as authors_view
 create  view  authors_view as select name,count(*) as views from articles,authors,log where authors.id=articles.author and  log.path like concat('%',articles.slug) group by name order by views desc;
 ## The third query is based on which day did more than 1% of requests lead to errors:
 For  this I have created three views:
-1.error_view : this view gives the number of errors that not found.
-create view error_view as select date(time),count(*) as errors  from log where log.status like concat('404 NOT FOUND') group by date(time) order by errors desc;
+### 1.error_view : this view gives the number of errors that not found.
+##### create view error_view as select date(time),count(*) as errors  from log where log.status like concat('404 NOT FOUND') group by date(time) order by errors desc;
 2.total_view: this view gives the total views
 create view total_view as select date(time),count(status) as total_errors from log group by date(time)  order by total_errors desc;
 3. log_view:this view gives the percentage of errors
