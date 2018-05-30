@@ -2,10 +2,10 @@
 About Queries in postgres database
 This Log analysis project is third project of Udacity Full Stack Nanodegree course:
 ## To do this project we must install certain softwares as:
-  -virtualBox
-  -vagrant
-  -postgres database
-  -python
+     -virtualBox
+     -vagrant
+     -postgres database
+     -python
 ## vagrant:
  This vagrant is used to run different operating system environment in on single OS.
 This project is completely based on Ubuntu operating system.
