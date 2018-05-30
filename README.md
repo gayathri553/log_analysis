@@ -25,16 +25,16 @@ To see the roles command : \du
 ## To make a database user with different roles:
 ##### alter user username with Superuser;
 ##### alter user username with Createrole;
-##### alter user username with CreateDB;
-To get exit we have command:\q or exit
-Now we should a database as vagarnt : sudo -i -u vagrant
-next command : Createdb vagrant 
-Now we should create database to our project name news by using following commands:
+##### alter user username with CreateDB; 
+###### To get exit we have command:\q or exit
+###### Now we should a database as vagarnt : sudo -i -u vagrant
+###### next command : Createdb vagrant 
+######Now we should create database to our project name news by using following commands:
 run psql command.After that we must create database name news by using:\c news
 Then we get message as that you are connected to news database from vagrant..
-To fetch the data for our project we use the command that already discuused in the udacity course tutorials : psql -d news -f filename.sql (This Zip file we get download from the udacity full stack course of log analysis project)
-Then after we use different queries to get data to certain neccessary question that aksed in the project.
-In this news data base we have three tables named:
+######To fetch the data for our project we use the command that already discuused in the udacity course tutorials : psql -d news -f filename.sql (This Zip file we get download from the udacity full stack course of log analysis project)
+######Then after we use different queries to get data to certain neccessary question that aksed in the project.
+######In this news data base we have three tables named:
       articles,
       authors,
       log
@@ -45,7 +45,7 @@ In this news data base we have three tables named:
 ### For this I have created a views as authors_view
 #### create  view  authors_view as select name,count(*) as views from articles,authors,log where authors.id=articles.author and  log.path like concat('%',articles.slug) group by name order by views desc;
 ## The third query is based on which day did more than 1% of requests lead to errors:
-###For  this I have created three views:
+### For  this I have created three views:
 #### 1.error_view : this view gives the number of errors that not found.
 ##### create view error_view as select date(time),count(*) as errors  from log where log.status like concat('404 NOT FOUND') group by date(time) order by errors desc;
 #### 2.total_view: this view gives the total views
@@ -56,5 +56,5 @@ In this news data base we have three tables named:
  open the file and write the queries based on given conditions and save that file in the vagrant directory with .py extension.
 ## To run:
 In the vagrant folder directory run the file using python filename.py
-#####By this we can complete the loganalysis project.
+##### By this we can complete the loganalysis project.
  
