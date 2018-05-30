@@ -26,17 +26,17 @@ To display files in our directory we should use command : \l
      alter user username with Superuser;
      alter user username with Createrole;
      alter user username with CreateDB; 
-###### To get exit we have command:\q or exit
-###### Now we should a database as vagarnt : sudo -i -u vagrant
-###### next command : Createdb vagrant 
-###### Now we should create database to our project name news by using following commands:
+#### To get exit we have command:\q or exit
+#### Now we should a database as vagarnt : sudo -i -u vagrant
+#### next command : Createdb vagrant 
+#### Now we should create database to our project name news by using following commands:
      run psql command.After that we must create database name news by using:\c news
      Then we get message as that you are connected to news database from vagrant..
 ###### To fetch the data for our project we use the command that already discuused in the udacity course tutorials : psql -d news -f            filename.sql (This Zip file we get download from the udacity full stack course of log analysis project)
 ###### Then after we use different queries to get data to certain neccessary question that aksed in the project.
 ###### In this news data base we have three tables named:
-      articles,
-      authors,
+      articles
+      authors
       log
  ## The first query is most popular three articles of all time:
  ### For this  I have created a view as  article_view
