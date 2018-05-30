@@ -56,6 +56,6 @@ To display files in our directory we should use command : \l
  open the file and write the queries based on given conditions and save that file in the vagrant directory with .py extension.
 ## To run:
 In the vagrant folder directory run the file using python filename.py
-####Then I had checked my code in pep8 online checker.
+#### Then I had checked my code in pep8 online checker.
 ##### By this we can complete the loganalysis project.
  
