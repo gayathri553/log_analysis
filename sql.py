@@ -17,7 +17,7 @@ def articles_view():
     find = cur.fetchall()
     print("The most popular three articles:")
     for i in find:
-        print(i)
+        print(str(i)+" - views")
 
 
 def author_view():
@@ -25,7 +25,7 @@ def author_view():
     find = cur.fetchall()
     print("The most popular article authors:")
     for i in find:
-        print(i)
+        print(str(i)+" - views")
 
 
 def log_error_view():
@@ -33,7 +33,7 @@ def log_error_view():
     find = cur.fetchall()
     print("On which day did more than 1%  of errors found:")
     for i in find:
-        print(i)
+        print(str(i)+" - errors")
 
 articles_view()
 author_view()
