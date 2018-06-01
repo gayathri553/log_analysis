@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import psycopg2
 
 conn = psycopg2.connect(database="news", user="vagrant", password="vagrant")
