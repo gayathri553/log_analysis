@@ -51,7 +51,7 @@ To display files in our directory we should use command : \l
 #### 2.total_view: this view gives the total views
      create view total_view as select date(time),count(status) as total_errors from log group by date(time)  order by total_errors desc;
 #### 3. log_view:this view gives the percentage of errors
-     create view log_view as select total_view.date as date,((100.00*errors)/(total_errors)) as percentage_errors from error_view natural join total_viewwhere error_view.date=total_view.date group by total_view.date order by percentage_errors desc;
+     create view log_view as select total_view.date as date,((100.00*errors)/(total_errors)) as percentage_errors from error_view natural join total_view where error_view.date=total_view.date group by total_view.date,percentage_errors order by percentage_errors desc;
 ## Queries:
  open the file and write the queries based on given conditions and save that file in the vagrant directory with .py extension.
 ## To run:
